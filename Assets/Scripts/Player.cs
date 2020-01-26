@@ -77,8 +77,10 @@ public class Player : MonoBehaviour
     }
     private void Move()
     {
-        var deltaX = Input.GetAxis("Horizontal");
-        var deltaY = Input.GetAxis("Vertical");
+        var deltaX = Input.GetAxis("Mouse X");
+        var deltaY = Input.GetAxis("Mouse Y");
+        //var deltaX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+        //var deltaY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
         deltaX *= Time.deltaTime;
         deltaX *= moveSpeed;
         deltaY *= Time.deltaTime;
@@ -86,6 +88,8 @@ public class Player : MonoBehaviour
         var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
         var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
         transform.position = new Vector2(newXPos, newYPos);
+        //transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition.x), Camera.main.ScreenToWorldPoint(Input.mousePosition.y));
+
     }
 
     private void Fire()
