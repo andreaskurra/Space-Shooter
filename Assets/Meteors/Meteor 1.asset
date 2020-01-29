@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a81f0ffc84baeec40b2482adff7c1086, type: 3}
+  m_Name: Meteor 1
+  m_EditorClassIdentifier: 
+  meteorPrefab: {fileID: 5290440667842184844, guid: 6b78b09f5d016934e900fe1b1f188f08,
+    type: 3}
+  spotSpawn: {fileID: 3111063882069954354, guid: d50aba5c266222b40af948b4e6641e7e,
+    type: 3}
+  timeBetweenSpawns: 0.5
+  spawnRandomFactor: 0.3
+  numberOfMeteors: 1
+  moveSpeed: 3

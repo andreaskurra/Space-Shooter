@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour
 {
-    [SerializeField] List<WaveConfig> waveConfigs;
+    [SerializeField] List<MeteorConfig> meteorConfigs;
     [SerializeField] int startingWave = 0;
     [SerializeField] bool looping = false;
     // Start is called before the first frame update
@@ -19,24 +19,25 @@ public class MeteorSpawner : MonoBehaviour
 
     private IEnumerator SpawnAllMeteors()
     {
-        for (int waveIndex = startingWave; waveIndex < waveConfigs.Count; waveIndex++)
-        {
-            var currentWave = waveConfigs[waveIndex];
-            yield return StartCoroutine(SpawnAllEnemiesInWave(currentWave));
-        }
+        //for (int meteorIndex = startingWave; meteorIndex <= meteorConfigs.Count; meteorIndex++)
+        //{
+            var currentWave = meteorConfigs[startingWave];
+            yield return StartCoroutine(SpawnMeteor(currentWave));
+       //}
     }
-    private IEnumerator SpawnAllEnemiesInWave(WaveConfig waveConfig)
+    private IEnumerator SpawnMeteor(MeteorConfig meteorConfig)
     {
-        for (int enemyCount = 0; enemyCount < waveConfig.GetNumberOfEnemies(); enemyCount++)
-        {
+        //for (int meteorCount = 0; meteorCount < meteorConfig.GetNumberOfMeteors(); meteorCount++)
+        //{
 
-           var newEnemy = Instantiate(
-                waveConfig.GetEnemyPrefab(),
-                waveConfig.GetWaypoints()[0].transform.position,
+           var newMeteor = Instantiate(
+                meteorConfig.GetMeteorPrefab(),
+                meteorConfig.GetWaypoints()[0].transform.position,
                 Quaternion.identity
                 );
-            newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
-            yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
-        }
+            newMeteor.GetComponent<MetorSpot>().SetWaveConfig(meteorConfig);
+            
+            yield return new WaitForSeconds(meteorConfig.GetTimeBetweenSpawns());
+        //}
     }
 }

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f450c5f9d8cde084db3202ec9d77b973, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfigs:
-  - {fileID: 0}
-  startingWave: 1
+  meteorConfigs:
+  - {fileID: 11400000, guid: 526592f5571876b4182b3e3d7379f768, type: 2}
+  startingWave: 0
   looping: 0

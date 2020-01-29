@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Meteor Config")]
-public class MeteorConfig : MonoBehaviour
+public class MeteorConfig : ScriptableObject
 {
     [SerializeField] GameObject meteorPrefab;
     [SerializeField] GameObject spotSpawn;
@@ -12,7 +12,7 @@ public class MeteorConfig : MonoBehaviour
     [SerializeField] int numberOfMeteors = 1;
     [SerializeField] float moveSpeed = 2f;
 
-    public GameObject GetEnemyPrefab() { return meteorPrefab; }
+    public GameObject GetMeteorPrefab() { return meteorPrefab; }
     public List<Transform> GetWaypoints()
     {
         var waveWaypoints = new List<Transform>();
@@ -24,6 +24,6 @@ public class MeteorConfig : MonoBehaviour
     }
     public float GetTimeBetweenSpawns() { return timeBetweenSpawns; }
     public float GetSpawnRandomFactor() { return spawnRandomFactor; }
-    public int GetNumberOfEnemies() { return numberOfMeteors; }
+    public int GetNumberOfMeteors() { return numberOfMeteors; }
     public float GetMoveSpeed() { return moveSpeed; }
 }
