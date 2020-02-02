@@ -45,5 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meteorConfigs:
   - {fileID: 11400000, guid: 526592f5571876b4182b3e3d7379f768, type: 2}
+  - {fileID: 11400000, guid: 9a96b93784a126f49956f45a24a45a75, type: 2}
   startingWave: 0
-  looping: 0
+  looping: 1
+  minimumScore: 550

@@ -7,7 +7,7 @@ public class MeteorSpawner : MonoBehaviour
     [SerializeField] List<MeteorConfig> meteorConfigs;
     [SerializeField] int startingWave = 0;
     [SerializeField] bool looping = false;
-    [SerializeField] int score = 200;
+    [SerializeField] int minimumScore = 200;
     GameSession gameSession;
     // Start is called before the first frame update
 
@@ -20,13 +20,13 @@ public class MeteorSpawner : MonoBehaviour
             {
                 yield return StartCoroutine(SpawnAllMeteors());
             }
-            while (gameSession.GetScore() >= score);
+            while (gameSession.GetScore() >= minimumScore);
         } while (looping);
     }
 
     private IEnumerator SpawnAllMeteors()
     {
-        if (gameSession.GetScore() >= score)
+        if (gameSession.GetScore() >= minimumScore)
         {
             for (int meteorIndex = startingWave; meteorIndex <= meteorConfigs.Count - 1; meteorIndex++)
             {

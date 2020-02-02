@@ -18,7 +18,7 @@ MonoBehaviour:
     type: 3}
   addOnPrefab: {fileID: 9103761635124012178, guid: a7a8a34f6b7cfcf459a31304167be381,
     type: 3}
-  timeBetweenSpawns: 40
-  spawnRandomFactor: 20
-  numberOfMeteors: 1
+  timeBetweenSpawns: 10
+  spawnRandomFactor: 5
+  numberOfMeteors: 2
   moveSpeed: 3

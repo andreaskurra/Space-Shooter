@@ -639,17 +639,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2318307501870013353, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee,
         type: 3}
-      propertyPath: meteorConfigs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318307501870013353, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee,
-        type: 3}
-      propertyPath: meteorConfigs.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 9a96b93784a126f49956f45a24a45a75,
-        type: 2}
-    - target: {fileID: 2318307501870013353, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee,
-        type: 3}
       propertyPath: meteorConfigs.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 526592f5571876b4182b3e3d7379f768,
@@ -698,14 +687,8 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 2318307501870013353, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee,
         type: 3}
-      propertyPath: meteorConfigs.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 526592f5571876b4182b3e3d7379f768,
-        type: 2}
-    - target: {fileID: 2318307501870013353, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee,
-        type: 3}
-      propertyPath: looping
-      value: 1
+      propertyPath: score
+      value: 550
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee, type: 3}
@@ -993,6 +976,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6315230494549699284, guid: 8b8c686978df8044eb46be5573a1000c,
+        type: 3}
+      propertyPath: waveConfigs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315230494549699284, guid: 8b8c686978df8044eb46be5573a1000c,
+        type: 3}
+      propertyPath: waveConfigs.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c23979788706fc44a0728ff9d183c24,
+        type: 2}
+    - target: {fileID: 6315230494549699284, guid: 8b8c686978df8044eb46be5573a1000c,
+        type: 3}
+      propertyPath: waveConfigs.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: adfcbea185a7f224289b8f94c0fdfbf1,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b8c686978df8044eb46be5573a1000c, type: 3}
 --- !u!1001 &6901569114228199959
