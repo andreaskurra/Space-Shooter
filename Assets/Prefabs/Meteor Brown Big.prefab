@@ -126,6 +126,8 @@ MonoBehaviour:
   deathVFX: {fileID: 3975009753913150537, guid: 8f2fae13add64af4ab0c6a18703dea57,
     type: 3}
   durationOfExplosion: 1
+  addOns:
+  - {fileID: 9103761635124012178, guid: a7a8a34f6b7cfcf459a31304167be381, type: 3}
 --- !u!50 &-169560954192432435
 Rigidbody2D:
   serializedVersion: 4

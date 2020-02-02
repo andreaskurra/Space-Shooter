@@ -7,6 +7,8 @@ public class Meteor : MonoBehaviour
     [SerializeField] int health = 200;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float durationOfExplosion = 1f;
+    [SerializeField] List<GameObject> addOns;
+    [SerializeField] float addOnFallSpeed = 1.5f;
     private void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -32,7 +34,10 @@ public class Meteor : MonoBehaviour
 
         Destroy(gameObject);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
-        
+        var addOnPower = addOns[0];
+        //Debug.Log(addOns.Count);
+        GameObject addOn = Instantiate(addOnPower, transform.position, Quaternion.identity);
+        addOn.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -addOnFallSpeed);
         Destroy(explosion, durationOfExplosion);
 
     }
