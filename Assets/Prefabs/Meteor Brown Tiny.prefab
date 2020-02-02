@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6648563062061997715}
   - component: {fileID: 340522967220075362}
   - component: {fileID: 3564684421554901692}
+  - component: {fileID: 8964547941181018190}
   m_Layer: 12
   m_Name: Meteor Brown Tiny
   m_TagString: Untagged
@@ -164,3 +165,16 @@ MonoBehaviour:
   deathVFX: {fileID: 3975009753913150537, guid: 8f2fae13add64af4ab0c6a18703dea57,
     type: 3}
   durationOfExplosion: 1
+--- !u!114 &8964547941181018190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5290440667842184844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868970a7a9cb03a46bf7132f96223af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOfSpin: 270

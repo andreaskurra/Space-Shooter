@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7933529687855107620}
   - component: {fileID: 994047868672351646}
   - component: {fileID: 1389587255837577094}
+  - component: {fileID: 7327747275536852361}
   m_Layer: 12
   m_Name: Meteror Brown Med
   m_TagString: Untagged
@@ -93,3 +94,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad6a40beecd1a64ca60f7b80f9b92f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7327747275536852361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7455745930022274399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868970a7a9cb03a46bf7132f96223af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOfSpin: 120

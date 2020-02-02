@@ -7,30 +7,40 @@ public class MeteorSpawner : MonoBehaviour
     [SerializeField] List<MeteorConfig> meteorConfigs;
     [SerializeField] int startingWave = 0;
     [SerializeField] bool looping = false;
+    [SerializeField] int score = 200;
+    GameSession gameSession;
     // Start is called before the first frame update
+
     IEnumerator Start()
     {
+        gameSession = FindObjectOfType<GameSession>();
         do
         {
-            yield return StartCoroutine(SpawnAllMeteors());
-        }
-        while (looping);
+            do
+            {
+                yield return StartCoroutine(SpawnAllMeteors());
+            }
+            while (gameSession.GetScore() >= score);
+        } while (looping);
     }
 
     private IEnumerator SpawnAllMeteors()
     {
-        //for (int meteorIndex = startingWave; meteorIndex <= meteorConfigs.Count; meteorIndex++)
-        //{
-            var currentWave = meteorConfigs[startingWave];
-            yield return StartCoroutine(SpawnMeteor(currentWave));
-       //}
+        if (gameSession.GetScore() >= score)
+        {
+            for (int meteorIndex = startingWave; meteorIndex <= meteorConfigs.Count - 1; meteorIndex++)
+            {
+                var currentWave = meteorConfigs[meteorIndex];
+                yield return StartCoroutine(SpawnMeteor(currentWave));
+            }
+        }
     }
     private IEnumerator SpawnMeteor(MeteorConfig meteorConfig)
     {
         //for (int meteorCount = 0; meteorCount < meteorConfig.GetNumberOfMeteors(); meteorCount++)
         //{
 
-           var newMeteor = Instantiate(
+            var newMeteor = Instantiate(
                 meteorConfig.GetMeteorPrefab(),
                 meteorConfig.GetWaypoints()[0].transform.position,
                 Quaternion.identity

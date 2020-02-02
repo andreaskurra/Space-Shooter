@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 2649904033645212068}
   - component: {fileID: 5645473992656303349}
   - component: {fileID: 8072852573011531005}
+  - component: {fileID: -4419377704237741716}
+  - component: {fileID: 3780949891234006928}
+  - component: {fileID: -169560954192432435}
+  - component: {fileID: 9100179752968750127}
   m_Layer: 12
   m_Name: Meteor Brown Big
   m_TagString: Untagged
@@ -93,3 +97,93 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad6a40beecd1a64ca60f7b80f9b92f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4419377704237741716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500407219748460534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868970a7a9cb03a46bf7132f96223af8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedOfSpin: 80
+--- !u!114 &3780949891234006928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500407219748460534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fa9584bd3c1b44f964c1242dac918b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1000
+  deathVFX: {fileID: 3975009753913150537, guid: 8f2fae13add64af4ab0c6a18703dea57,
+    type: 3}
+  durationOfExplosion: 1
+--- !u!50 &-169560954192432435
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500407219748460534}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!60 &9100179752968750127
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500407219748460534}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.02, y: 1.68}
+    newSize: {x: 1.01, y: 0.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.75527096, y: -0.46872616}
+      - {x: 0.9081545, y: -0.17413521}
+      - {x: 0.94745207, y: -0.087818146}
+      - {x: 0.94745255, y: -0.11891651}
+      - {x: 0.9865444, y: 0.021816254}
+      - {x: 0.4787259, y: 0.8243637}
+      - {x: -0.64308906, y: 0.82436275}
+      - {x: -0.69872594, y: 0.7418146}
+      - {x: -0.9318147, y: 0.04527092}
+      - {x: -1.0178185, y: -0.22181511}
+      - {x: -0.46654463, y: -0.7852707}
+      - {x: -0.36909223, y: -0.8009081}
+      - {x: 0.22218156, y: -0.56963444}
+      - {x: 0.5290923, y: -0.63835907}
+      - {x: 0.68835974, y: -0.68345547}

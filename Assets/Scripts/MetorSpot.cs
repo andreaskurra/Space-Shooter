@@ -30,19 +30,20 @@ public class MetorSpot : MonoBehaviour
     {
         if (waypointindex <= waypoints.Count - 1)
         {
-            //    var targetPosition = waypoints[waypointindex].transform.position;
-            //    var movementThisFrame = meteorConfig.GetMoveSpeed() * Time.deltaTime;
-            //    transform.position = Vector2.MoveTowards
-            //        (transform.position, targetPosition, movementThisFrame);
-            //    if (transform.position == targetPosition)
-            //    {
-            //        waypointindex++;
-            //    }
-            //}
-            //else
-            //    Destroy(gameObject);
-
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -meteorConfig.GetMoveSpeed());
+            var targetPosition = waypoints[waypointindex].transform.position;
+            var movementThisFrame = meteorConfig.GetMoveSpeed() * Time.deltaTime;
+            transform.position = Vector2.MoveTowards
+                (transform.position, targetPosition, movementThisFrame);
+            if (transform.position == targetPosition)
+            {
+                waypointindex++;
+            }
         }
+        else
+        { 
+            Destroy(gameObject);
+
+        //this.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -meteorConfig.GetMoveSpeed());
+    }
     }
 }

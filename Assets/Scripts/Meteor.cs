@@ -28,8 +28,11 @@ public class Meteor : MonoBehaviour
     private void Die()
     {   
 
+       
+
         Destroy(gameObject);
         GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
+        
         Destroy(explosion, durationOfExplosion);
 
     }

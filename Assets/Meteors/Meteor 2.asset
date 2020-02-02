@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a81f0ffc84baeec40b2482adff7c1086, type: 3}
-  m_Name: Meteor 1
+  m_Name: Meteor 2
   m_EditorClassIdentifier: 
-  meteorPrefab: {fileID: 5290440667842184844, guid: 6b78b09f5d016934e900fe1b1f188f08,
+  meteorPrefab: {fileID: 500407219748460534, guid: 62dd2fe72f3e07747a5fe2ec04f97889,
     type: 3}
-  spotSpawn: {fileID: 4540053750213113430, guid: d50aba5c266222b40af948b4e6641e7e,
+  spotSpawn: {fileID: 2743074041164774543, guid: 5e99988ebae6d404c944546f4f477f00,
     type: 3}
   addOnPrefab: {fileID: 9103761635124012178, guid: a7a8a34f6b7cfcf459a31304167be381,
     type: 3}
-  timeBetweenSpawns: 40
-  spawnRandomFactor: 20
+  timeBetweenSpawns: 50
+  spawnRandomFactor: 40
   numberOfMeteors: 1
-  moveSpeed: 3
+  moveSpeed: 1

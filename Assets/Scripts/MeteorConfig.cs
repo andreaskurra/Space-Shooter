@@ -7,6 +7,7 @@ public class MeteorConfig : ScriptableObject
 {
     [SerializeField] GameObject meteorPrefab;
     [SerializeField] GameObject spotSpawn;
+    [SerializeField] GameObject addOnPrefab;
     [SerializeField] float timeBetweenSpawns = 0.5f;
     [SerializeField] float spawnRandomFactor = 0.3f;
     [SerializeField] int numberOfMeteors = 1;
@@ -26,4 +27,6 @@ public class MeteorConfig : ScriptableObject
     public float GetSpawnRandomFactor() { return spawnRandomFactor; }
     public int GetNumberOfMeteors() { return numberOfMeteors; }
     public float GetMoveSpeed() { return moveSpeed; }
+
+    public GameObject GetAddOnPrefab () {return addOnPrefab;}
 }
