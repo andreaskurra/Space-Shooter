@@ -14,19 +14,26 @@ public class Player : MonoBehaviour
     [SerializeField] [Range(0, 1)] float shootSoundVol = 0.25f; 
     [SerializeField] [Range(0, 1)] float deathVolume = 0.7f;
 
-
     [Header ("Projectile")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] public float ProjectileFiringPeriod = 0.5f;
+    [Header("Getting Shot")]
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float durationOfExplosion = 1f;
+    [SerializeField] float timeToColor = 1f;
     Coroutine firingCoroutine;
 
     float xMin;
     float xMax;
     float yMin;
     float yMax;
+    SpriteRenderer sr;
+    Color defaultColor;
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
+        defaultColor = sr.color;
         SetUpBoundaries();
     }
 
@@ -48,6 +55,10 @@ public class Player : MonoBehaviour
     {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
+        if (health > 0)
+        {
+            StartCoroutine("SwitchColor");
+        }
         if (health <= 0)
         {
             Die();
@@ -57,6 +68,8 @@ public class Player : MonoBehaviour
     private void Die()
     {   
         Destroy(gameObject);
+        GameObject explosion = Instantiate(deathVFX, transform.position, transform.rotation);
+        Destroy(explosion, durationOfExplosion);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathVolume);
         FindObjectOfType<Level>().LoadGameOver();
 
@@ -103,6 +116,13 @@ public class Player : MonoBehaviour
         {
             StopCoroutine(firingCoroutine);
         }
+    }
+    IEnumerator SwitchColor()
+    {
+        sr.color = new Color(1f, 0.4858491f, 0.4858491f);
+        yield return new WaitForSeconds(timeToColor);
+        sr.color = defaultColor;
+
     }
     IEnumerator FireContinuously()
     {

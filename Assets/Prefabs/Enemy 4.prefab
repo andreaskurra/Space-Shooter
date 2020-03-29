@@ -123,6 +123,7 @@ MonoBehaviour:
   deathVolume: 0.7
   shootSFX: {fileID: 8300000, guid: 3abdb1c32567ee941b0c1e1ba475c5c4, type: 3}
   shootSoundVol: 0.35
+  timeToColor: 0.07
 --- !u!58 &5220877897201529644
 CircleCollider2D:
   m_ObjectHideFlags: 0

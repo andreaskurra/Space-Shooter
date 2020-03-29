@@ -15,15 +15,21 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] float projectileSpeed = 10f;
     [Header("Sound Effects")]
-    [SerializeField] GameObject deathVFX;
-    [SerializeField] float durationOfExplosion = 1f;
     [SerializeField] AudioClip deathSFX;
     [SerializeField] [Range(0,1)]float deathVolume=0.7f;
     [SerializeField] AudioClip shootSFX;
     [SerializeField] [Range(0, 1)] float shootSoundVol = 0.25f;
+    [Header("Getting Shot")]
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float durationOfExplosion = 1f;
+    [SerializeField] float timeToColor = 1f;
     // Start is called before the first frame update
+    SpriteRenderer sr;
+    Color defaultColor;
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
+        defaultColor = sr.color;
         shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
     }
 
@@ -64,10 +70,22 @@ public class Enemy : MonoBehaviour
     {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
+        if (health> 0)
+        {
+            StartCoroutine("SwitchColor");
+        }
         if (health <= 0)
         {
             Die();
         }
+    }
+
+    IEnumerator SwitchColor()
+    {
+        sr.color = new Color(1f, 0.4858491f, 0.4858491f);
+        yield return new WaitForSeconds(timeToColor);
+        sr.color = defaultColor;
+        
     }
 
     private void Die()
