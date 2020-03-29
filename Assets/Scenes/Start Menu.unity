@@ -400,7 +400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Force Awakens
+  m_text: Defend the Universe
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 89c4055d302ce1f40ae06fe50b72a41c, type: 2}
   m_sharedMaterial: {fileID: -5635027508055171192, guid: 89c4055d302ce1f40ae06fe50b72a41c,
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 908698993}
-    characterCount: 17
+    characterCount: 19
     spriteCount: 0
     spaceCount: 2
     wordCount: 3

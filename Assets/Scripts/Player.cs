@@ -7,13 +7,13 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     [Header ("Player Movement")]
     [SerializeField] float moveSpeed = 10f;
-    [SerializeField] float padding = 1f;
+    [SerializeField] float padding = 0.7f;
     [SerializeField] int health = 200;
     [SerializeField] AudioClip deathSFX;
     [SerializeField] AudioClip shootSFX;
     [SerializeField] [Range(0, 1)] float shootSoundVol = 0.25f; 
     [SerializeField] [Range(0, 1)] float deathVolume = 0.7f;
-
+    [SerializeField] float fingerPadding = 1f;
     [Header ("Projectile")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
@@ -100,7 +100,20 @@ public class Player : MonoBehaviour
         deltaY *= moveSpeed;
         var newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
         var newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
-        transform.position = new Vector2(newXPos, newYPos);
+        if (Input.GetMouseButton(0))
+        {
+            var pos = Input.mousePosition;
+            pos = Camera.main.ScreenToWorldPoint(pos);
+            pos.x = Mathf.Clamp(pos.x, xMin, xMax); 
+            pos.y = Mathf.Clamp(pos.y + fingerPadding, yMin, yMax);
+            transform.position = Vector2.MoveTowards(transform.position, pos, moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.position = new Vector2(newXPos, newYPos);
+        }
+
+        
         //transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition.x), Camera.main.ScreenToWorldPoint(Input.mousePosition.y));
 
     }
