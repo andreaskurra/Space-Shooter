@@ -128,6 +128,7 @@ MonoBehaviour:
   durationOfExplosion: 1
   addOns:
   - {fileID: 9103761635124012178, guid: a7a8a34f6b7cfcf459a31304167be381, type: 3}
+  - {fileID: 5316186573884308637, guid: 721263c9e13bccb469cee6f9f051e9d4, type: 3}
   addOnFallSpeed: 1.5
 --- !u!50 &-5422805173404005394
 Rigidbody2D:

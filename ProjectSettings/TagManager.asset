@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Attack Speed
+  - Health Restore
+  - Health Add
+  - Shield
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [Header ("Player Movement")]
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.7f;
-    [SerializeField] int health = 200;
+    [SerializeField] public int health = 200;
     [SerializeField] AudioClip deathSFX;
     [SerializeField] AudioClip shootSFX;
     [SerializeField] [Range(0, 1)] float shootSoundVol = 0.25f; 
@@ -30,10 +30,22 @@ public class Player : MonoBehaviour
     float yMax;
     SpriteRenderer sr;
     Color defaultColor;
+
+    
+
+    public Color getColor()
+    {
+        return GetComponent<SpriteRenderer>().color;
+    }
+
+    public float getTimeToColor()
+    {
+        return timeToColor;
+    }
+
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        defaultColor = sr.color;
+      
         SetUpBoundaries();
     }
 
@@ -57,7 +69,8 @@ public class Player : MonoBehaviour
         damageDealer.Hit();
         if (health > 0)
         {
-            StartCoroutine("SwitchColor");
+            StartCoroutine(SwitchColor());
+            
         }
         if (health <= 0)
         {
@@ -113,9 +126,6 @@ public class Player : MonoBehaviour
             transform.position = new Vector2(newXPos, newYPos);
         }
 
-        
-        //transform.position = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition.x), Camera.main.ScreenToWorldPoint(Input.mousePosition.y));
-
     }
 
     private void Fire()
@@ -132,6 +142,9 @@ public class Player : MonoBehaviour
     }
     IEnumerator SwitchColor()
     {
+       
+        sr = GetComponent<SpriteRenderer>();
+        defaultColor = sr.color;
         sr.color = new Color(1f, 0.4858491f, 0.4858491f);
         yield return new WaitForSeconds(timeToColor);
         sr.color = defaultColor;

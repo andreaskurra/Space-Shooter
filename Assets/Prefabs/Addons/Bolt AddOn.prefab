@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1829378838618328818}
   m_Layer: 13
   m_Name: Bolt AddOn
-  m_TagString: Untagged
+  m_TagString: Attack Speed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34fa812e05b1d1a48961d8c0f232c494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerShootRateAdd: 0.05
+  PlayerShootRateMax: 0.15
+  playerLaser: {fileID: 1536134077022196393, guid: 9d0272e4b7bb5844cb667ac9bd99d117,
+    type: 3}
+  timeToColor: 0.07
 --- !u!1001 &7888898368412131520
 PrefabInstance:
   m_ObjectHideFlags: 0

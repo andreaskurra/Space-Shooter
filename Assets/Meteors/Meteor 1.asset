@@ -16,7 +16,7 @@ MonoBehaviour:
     type: 3}
   spotSpawn: {fileID: 4540053750213113430, guid: d50aba5c266222b40af948b4e6641e7e,
     type: 3}
-  addOnPrefab: {fileID: 9103761635124012178, guid: a7a8a34f6b7cfcf459a31304167be381,
+  addOnPrefab: {fileID: 9103761635124012178, guid: 721263c9e13bccb469cee6f9f051e9d4,
     type: 3}
   timeBetweenSpawns: 10
   spawnRandomFactor: 5

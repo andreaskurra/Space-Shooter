@@ -101,10 +101,14 @@ MonoBehaviour:
   shootSFX: {fileID: 8300000, guid: 25ac8151feda95845a239e271715dc3e, type: 3}
   shootSoundVol: 0.03
   deathVolume: 1
+  fingerPadding: 1
   laserPrefab: {fileID: 1536134077022196393, guid: 9d0272e4b7bb5844cb667ac9bd99d117,
     type: 3}
   projectileSpeed: 20
   ProjectileFiringPeriod: 0.5
+  deathVFX: {fileID: 0}
+  durationOfExplosion: 1
+  timeToColor: 1
 --- !u!60 &4371195984006136384
 PolygonCollider2D:
   m_ObjectHideFlags: 0

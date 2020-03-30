@@ -253,7 +253,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1317547918
 GameObject:
@@ -405,6 +405,26 @@ PrefabInstance:
         type: 3}
       propertyPath: timeToColor
       value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251658108559237911, guid: a3acec8ac515ef742a8a77879322bae4,
+        type: 3}
+      propertyPath: ProjectileFiringPeriod
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251658108559237909, guid: a3acec8ac515ef742a8a77879322bae4,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251658108559237909, guid: a3acec8ac515ef742a8a77879322bae4,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251658108559237909, guid: a3acec8ac515ef742a8a77879322bae4,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3acec8ac515ef742a8a77879322bae4, type: 3}
@@ -615,23 +635,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2318307501870013353, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee,
         type: 3}
-      propertyPath: meteorConfigs.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2318307501870013353, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee,
-        type: 3}
-      propertyPath: meteorConfigs.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 284737351aaa20c43a880e746ea0f9f0,
-        type: 2}
-    - target: {fileID: 2318307501870013353, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee,
-        type: 3}
-      propertyPath: meteorConfigs.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 2ce4d69f2fc8c854abb59369f12a14bb,
-        type: 2}
-    - target: {fileID: 2318307501870013353, guid: fe863fa4d94f8ac498b5aed4d4bcb5ee,
-        type: 3}
       propertyPath: meteorConfigs.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 526592f5571876b4182b3e3d7379f768,
@@ -831,7 +834,7 @@ PrefabInstance:
     - target: {fileID: 6205997269396557786, guid: a342be42dc220864181eed60554aa4cd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6205997269396557786, guid: a342be42dc220864181eed60554aa4cd,
         type: 3}
@@ -861,7 +864,7 @@ PrefabInstance:
     - target: {fileID: 6205997269396557786, guid: a342be42dc220864181eed60554aa4cd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6205997269396557786, guid: a342be42dc220864181eed60554aa4cd,
         type: 3}
@@ -962,23 +965,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6315230494549699284, guid: 8b8c686978df8044eb46be5573a1000c,
-        type: 3}
-      propertyPath: waveConfigs.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6315230494549699284, guid: 8b8c686978df8044eb46be5573a1000c,
-        type: 3}
-      propertyPath: waveConfigs.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 6c23979788706fc44a0728ff9d183c24,
-        type: 2}
-    - target: {fileID: 6315230494549699284, guid: 8b8c686978df8044eb46be5573a1000c,
-        type: 3}
-      propertyPath: waveConfigs.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: adfcbea185a7f224289b8f94c0fdfbf1,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b8c686978df8044eb46be5573a1000c, type: 3}
 --- !u!1001 &6901569114228199959
