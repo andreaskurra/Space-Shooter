@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.7f;
     [SerializeField] public int health = 200;
+    [SerializeField] public int maxHealth = 300;
     [SerializeField] AudioClip deathSFX;
     [SerializeField] AudioClip shootSFX;
     [SerializeField] [Range(0, 1)] float shootSoundVol = 0.25f; 
@@ -54,6 +55,35 @@ public class Player : MonoBehaviour
     {
         Move();
         Fire();
+
+        if (health / maxHealth * 100 < maxHealth/3)
+        {
+            Transform t = transform.Find("Small Damage");
+            Transform d = transform.Find("Damage Dust");
+            t.GetComponent<SpriteRenderer>().enabled = true;
+            d.gameObject.SetActive(true);
+        }
+        else
+        {
+            Transform t = transform.Find("Small Damage");
+            Transform d = transform.Find("Damage Dust");
+            t.GetComponent<SpriteRenderer>().enabled = false;
+            d.gameObject.SetActive(false);
+        }
+        //if (health / maxHealth * 100 <= maxHealth / 3)
+        //{
+        //    Transform t = transform.Find("Big Damage");
+        //    Transform d = transform.Find("Damage Dust");
+        //    t.GetComponent<SpriteRenderer>().enabled = true;
+        //    d.gameObject.SetActive(true);
+        //}
+        //else
+        //{
+        //    Transform t = transform.Find("Big Damage");
+        //    Transform d = transform.Find("Damage Dust");
+        //    t.GetComponent<SpriteRenderer>().enabled = false;
+        //    d.gameObject.SetActive(false);
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -67,6 +97,7 @@ public class Player : MonoBehaviour
     {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
+       
         if (health > 0)
         {
             StartCoroutine(SwitchColor());

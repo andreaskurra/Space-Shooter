@@ -18,7 +18,6 @@ public class AddOn : MonoBehaviour
     {
         
     }
-
     private void Update()
     {
         //Debug.Log(addOnTag);
@@ -35,7 +34,7 @@ public class AddOn : MonoBehaviour
                 {
                     FindObjectOfType<Player>().ProjectileFiringPeriod -= PlayerShootRateAdd;
                     sr = FindObjectOfType<Player>().GetComponent<SpriteRenderer>();
-                    object[] parms = new object[4] { 0.5184412f, 0.6226415f, 0f, sr }; //green color
+                    object[] parms = new object[4] { 0.5184412f, 0.6226415f, 0f, sr }; //yellowish color
                     StartCoroutine(ColorSwitch(parms));
                 }
             }
@@ -53,7 +52,8 @@ public class AddOn : MonoBehaviour
 
             }
         }
-        this.GetComponent<SpriteRenderer>().enabled = false;
+       // this.GetComponent<SpriteRenderer>().enabled = false; // Make the game object invisible -- working but it bugs.
+        
     }
     private IEnumerator ColorSwitch(object[] parms)
     {   
