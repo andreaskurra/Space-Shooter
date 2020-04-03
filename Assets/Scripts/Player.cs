@@ -55,35 +55,38 @@ public class Player : MonoBehaviour
     {
         Move();
         Fire();
+        CheckDamageVFX();
+    }
 
-        if (health / maxHealth * 100 < maxHealth/3)
+    private void CheckDamageVFX()
+    {
+        float h = health * 100 / maxHealth;
+        if ( h <= 66.66f)
         {
-            Transform t = transform.Find("Small Damage");
-            Transform d = transform.Find("Damage Dust");
-            t.GetComponent<SpriteRenderer>().enabled = true;
-            d.gameObject.SetActive(true);
+            Transform sd = transform.Find("Small Damage");
+            Transform dd = transform.Find("Damage Dust");
+            sd.GetComponent<SpriteRenderer>().enabled = true;
+            dd.gameObject.SetActive(true);
+            
+            if (h <= 33.33f)
+            {
+                Transform bd = transform.Find("Big Damage");
+                bd.GetComponent<SpriteRenderer>().enabled = true;
+                
+            }
         }
         else
         {
-            Transform t = transform.Find("Small Damage");
-            Transform d = transform.Find("Damage Dust");
-            t.GetComponent<SpriteRenderer>().enabled = false;
-            d.gameObject.SetActive(false);
+            Transform sd = transform.Find("Small Damage");
+            Transform bd = transform.Find("Big Damage");
+            Transform dd = transform.Find("Damage Dust");
+            sd.GetComponent<SpriteRenderer>().enabled = false;
+            bd.GetComponent<SpriteRenderer>().enabled = false;
+            dd.gameObject.SetActive(false);
         }
-        //if (health / maxHealth * 100 <= maxHealth / 3)
-        //{
-        //    Transform t = transform.Find("Big Damage");
-        //    Transform d = transform.Find("Damage Dust");
-        //    t.GetComponent<SpriteRenderer>().enabled = true;
-        //    d.gameObject.SetActive(true);
-        //}
-        //else
-        //{
-        //    Transform t = transform.Find("Big Damage");
-        //    Transform d = transform.Find("Damage Dust");
-        //    t.GetComponent<SpriteRenderer>().enabled = false;
-        //    d.gameObject.SetActive(false);
-        //}
+        
+         
+    
     }
 
     private void OnTriggerEnter2D(Collider2D other)
