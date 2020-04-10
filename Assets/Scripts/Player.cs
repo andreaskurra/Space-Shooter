@@ -61,20 +61,20 @@ public class Player : MonoBehaviour
     private void CheckDamageVFX()
     {
         float h = health * 100 / maxHealth;
-        if ( h <= 66.66f)
+        if (h < 100f && h >= 50f)
         {
             Transform sd = transform.Find("Small Damage");
             Transform dd = transform.Find("Damage Dust");
             sd.GetComponent<SpriteRenderer>().enabled = true;
             dd.gameObject.SetActive(true);
-            
-            if (h <= 33.33f)
-            {
-                Transform bd = transform.Find("Big Damage");
-                bd.GetComponent<SpriteRenderer>().enabled = true;
-                
-            }
         }
+        else if (h >= 0 && h <= 33f )
+        {
+            Transform bd = transform.Find("Big Damage");
+            bd.GetComponent<SpriteRenderer>().enabled = true;
+
+        }
+        
         else
         {
             Transform sd = transform.Find("Small Damage");
