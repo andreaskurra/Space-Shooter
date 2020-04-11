@@ -17,6 +17,11 @@ public class Level : MonoBehaviour
         FindObjectOfType<GameSession>().ResetGame();
     }
 
+    public void LoadOptions()
+    {
+        SceneManager.LoadScene("Options Menu");
+    }
+
     public void LoadGameOver()
     {
         StartCoroutine(WaitAndLoad());
