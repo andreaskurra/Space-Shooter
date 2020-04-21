@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
+
+    [SerializeField] public AudioClip[] audioClips;
+    public AudioSource audioSource;
+    public AudioListener audioListener;
+
     // Start is called before the first frame update
     void Awake()
     {
         SetUpSingleton();
+    }
+
+    void Start()
+    {
+        audioListener = GetComponent<AudioListener>();
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     private void SetUpSingleton()
@@ -25,6 +36,18 @@ public class MusicPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!audioSource.isPlaying)
+        {
+            PlayRandom();
+        }
     }
+
+    void PlayRandom()
+    {
+        audioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+        audioSource.Play();
+
+
+    }
+
 }

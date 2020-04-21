@@ -14,6 +14,7 @@ public class Level : MonoBehaviour
     public void LoadGame()
     {
         SceneManager.LoadScene("Game");
+        //FindObjectOfType<Player>().LoadPlayer();
         FindObjectOfType<GameSession>().ResetGame();
     }
 

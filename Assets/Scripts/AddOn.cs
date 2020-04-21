@@ -37,6 +37,13 @@ public class AddOn : MonoBehaviour
                     object[] parms = new object[4] { 0.5184412f, 0.6226415f, 0f, sr }; //yellowish color
                     StartCoroutine(ColorSwitch(parms));
                 }
+                else
+                {
+                    FindObjectOfType<GameSession>().AddToScore(75);
+                    sr = FindObjectOfType<Player>().GetComponent<SpriteRenderer>();
+                    object[] parms = new object[4] { 0.5184412f, 0.6226415f, 0f, sr }; //yellowish color
+                    StartCoroutine(ColorSwitch(parms));
+                }
             }
             else if (addOnTag == "Health Restore")
             {
@@ -47,6 +54,13 @@ public class AddOn : MonoBehaviour
                     object[] parms = new object[4] { 0.2053667f, 0.6132076f, 0.2076596f, sr }; //green color
                     StartCoroutine(ColorSwitch(parms));
 
+                }
+                else
+                {
+                    FindObjectOfType<GameSession>().AddToScore(50);
+                    sr = FindObjectOfType<Player>().GetComponent<SpriteRenderer>();
+                    object[] parms = new object[4] { 0.2053667f, 0.6132076f, 0.2076596f, sr }; //green color
+                    StartCoroutine(ColorSwitch(parms));
                 }
 
 

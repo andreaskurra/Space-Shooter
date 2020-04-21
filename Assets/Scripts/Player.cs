@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] AudioClip shootSFX;
     [SerializeField] [Range(0, 1)] float shootSoundVol = 0.25f; 
     [SerializeField] [Range(0, 1)] float deathVolume = 0.7f;
-    [SerializeField] float fingerPadding = 1f;
+    [SerializeField] float fingerPadding = 2f;
     [Header ("Projectile")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float projectileSpeed = 10f;
@@ -65,12 +65,18 @@ public class Player : MonoBehaviour
         {
             Transform sd = transform.Find("Small Damage");
             Transform dd = transform.Find("Damage Dust");
+            Transform df = transform.Find("Damage Fire");
             sd.GetComponent<SpriteRenderer>().enabled = true;
             dd.gameObject.SetActive(true);
+            df.gameObject.SetActive(false);
         }
         else if (h >= 0 && h <= 33f )
         {
             Transform bd = transform.Find("Big Damage");
+            Transform df = transform.Find("Damage Fire");
+            Transform dd = transform.Find("Damage Dust");
+            dd.gameObject.SetActive(false);
+            df.gameObject.SetActive(true);
             bd.GetComponent<SpriteRenderer>().enabled = true;
 
         }
@@ -80,9 +86,11 @@ public class Player : MonoBehaviour
             Transform sd = transform.Find("Small Damage");
             Transform bd = transform.Find("Big Damage");
             Transform dd = transform.Find("Damage Dust");
+            Transform df = transform.Find("Damage Fire");
             sd.GetComponent<SpriteRenderer>().enabled = false;
             bd.GetComponent<SpriteRenderer>().enabled = false;
             dd.gameObject.SetActive(false);
+            df.gameObject.SetActive(false);
         }
         
          
@@ -194,4 +202,24 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(ProjectileFiringPeriod);
         }
     }
+
+    public void SavePlayer()
+    {
+        SystemSave.SavePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData data = SystemSave.LoadPlayer();
+
+        health = data.health;
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+
+        transform.position = position;
+
+    }
+
 }
