@@ -50,6 +50,8 @@ public class AddOn : MonoBehaviour
                 if (FindObjectOfType<Player>().health < 300)
                 {
                     FindObjectOfType<Player>().health += 100;
+                    int currenthealth = FindObjectOfType<Player>().health;
+                    FindObjectOfType<Healthbar>().SetHealth(currenthealth);
                     sr = FindObjectOfType<Player>().GetComponent<SpriteRenderer>();
                     object[] parms = new object[4] { 0.2053667f, 0.6132076f, 0.2076596f, sr }; //green color
                     StartCoroutine(ColorSwitch(parms));

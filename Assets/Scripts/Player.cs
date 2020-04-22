@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     SpriteRenderer sr;
     Color defaultColor;
 
-    
+    public Healthbar healthBar;
 
     public Color getColor()
     {
@@ -48,6 +48,7 @@ public class Player : MonoBehaviour
     {
       
         SetUpBoundaries();
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -107,6 +108,7 @@ public class Player : MonoBehaviour
     private void ProcessHit(DamageDealer damageDealer)
     {
         health -= damageDealer.GetDamage();
+        healthBar.SetHealth(health);
         damageDealer.Hit();
        
         if (health > 0)
