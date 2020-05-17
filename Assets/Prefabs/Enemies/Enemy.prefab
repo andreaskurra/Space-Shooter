@@ -50,6 +50,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -111,18 +112,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   scoreValue: 150
+  EnemyDamageText: {fileID: 7401132581041327217, guid: 5239d6d365994304cb27a555d3e85534,
+    type: 3}
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
   projectile: {fileID: 4260512490612951845, guid: 2246ab47bb0120647aa46011cf795862,
     type: 3}
   projectileSpeed: 10
-  deathVFX: {fileID: 7006772742859223504, guid: acdbfeb439083874d90606a48b0e6c94,
-    type: 3}
-  durationOfExplosion: 1
   deathSFX: {fileID: 8300000, guid: 23bebbc3924282145881069f1bc437db, type: 3}
   deathVolume: 0.7
   shootSFX: {fileID: 8300000, guid: 3abdb1c32567ee941b0c1e1ba475c5c4, type: 3}
   shootSoundVol: 0.35
+  deathVFX: {fileID: 7006772742859223504, guid: acdbfeb439083874d90606a48b0e6c94,
+    type: 3}
+  durationOfExplosion: 1
+  timeToColor: 1
 --- !u!58 &5220877897201529644
 CircleCollider2D:
   m_ObjectHideFlags: 0
