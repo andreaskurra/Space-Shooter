@@ -110,10 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ac2f80ae4a05c459c97d231d762df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   scoreValue: 150
-  EnemyDamageText: {fileID: 7401132581041327217, guid: 5239d6d365994304cb27a555d3e85534,
+  EnemyDamageText: {fileID: 2651340353075435685, guid: 610ac024cf73bfb40909299579faf642,
     type: 3}
+  radiusOffset: 0.5
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
   projectile: {fileID: 4260512490612951845, guid: 2246ab47bb0120647aa46011cf795862,

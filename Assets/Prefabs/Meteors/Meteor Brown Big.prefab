@@ -50,6 +50,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -130,6 +131,8 @@ MonoBehaviour:
   - {fileID: 9103761635124012178, guid: a7a8a34f6b7cfcf459a31304167be381, type: 3}
   - {fileID: 5316186573884308637, guid: 721263c9e13bccb469cee6f9f051e9d4, type: 3}
   addOnFallSpeed: 1.5
+  FloatingText: {fileID: 7401132581041327217, guid: 5239d6d365994304cb27a555d3e85534,
+    type: 3}
 --- !u!50 &-169560954192432435
 Rigidbody2D:
   serializedVersion: 4

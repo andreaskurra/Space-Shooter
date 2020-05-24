@@ -112,8 +112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1000
   scoreValue: 480
-  EnemyDamageText: {fileID: 7401132581041327217, guid: 5239d6d365994304cb27a555d3e85534,
+  EnemyDamageText: {fileID: 1872236785418642782, guid: 0d06fe170df611543a2fb63b6e4bb941,
     type: 3}
+  radiusOffset: 0.5
   minTimeBetweenShots: 1
   maxTimeBetweenShots: 2
   projectile: {fileID: 4260512490612951845, guid: 6cc7aefaace9bc4459de1a3662a75c91,
