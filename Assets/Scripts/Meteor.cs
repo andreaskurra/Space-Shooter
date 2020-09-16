@@ -9,6 +9,7 @@ public class Meteor : MonoBehaviour
     [SerializeField] float durationOfExplosion = 1f;
     [SerializeField] List<GameObject> addOns;
     [SerializeField] float addOnFallSpeed = 1.5f;
+    [SerializeField] GameObject FloatingText;
     private void OnTriggerEnter2D(Collider2D other)
     {
 

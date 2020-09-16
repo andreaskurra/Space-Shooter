@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Stats")]
     [SerializeField] float health = 100;
     [SerializeField] int scoreValue = 150;
+    [SerializeField] GameObject EnemyDamageText;
+    [SerializeField] float radiusOffset = 0.5f;
     [Header("Shooting")]
     float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
@@ -16,7 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] float projectileSpeed = 10f;
     [Header("Sound Effects")]
     [SerializeField] AudioClip deathSFX;
-    [SerializeField] [Range(0,1)]float deathVolume=0.7f;
+    [SerializeField] [Range(0, 1)] float deathVolume = 0.7f;
     [SerializeField] AudioClip shootSFX;
     [SerializeField] [Range(0, 1)] float shootSoundVol = 0.25f;
     [Header("Getting Shot")]
@@ -42,7 +44,7 @@ public class Enemy : MonoBehaviour
     private void CountDownAndShoot()
     {
         shotCounter -= Time.deltaTime;
-        if (shotCounter<=0f)
+        if (shotCounter <= 0f)
         {
             Fire();
             shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
@@ -58,19 +60,22 @@ public class Enemy : MonoBehaviour
         AudioSource.PlayClipAtPoint(shootSFX, Camera.main.transform.position, shootSoundVol);
     }
 
-    private void  OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+
         DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
         if (!damageDealer) { return; }
         ProcessHit(damageDealer);
+
     }
 
     private void ProcessHit(DamageDealer damageDealer)
     {
+
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
-        if (health> 0)
+        if (health > 0)
         {
             StartCoroutine("SwitchColor");
         }
@@ -79,14 +84,30 @@ public class Enemy : MonoBehaviour
             health = 0f;
             Die();
         }
+       
+
+    }
+
+    IEnumerator FloatingText()
+    {
+       
+        GameObject floatingText = Instantiate(EnemyDamageText, transform.position, Quaternion.identity, transform);
+        var floatingTextPos = floatingText.GetComponent<Transform>().position;
+        //floatingTextPos.x = floatingTextPos.x;
+        //floatingTextPos.y = floatingTextPos.y;
+        floatingTextPos.z = -1;
+        var radius = GetComponent<CircleCollider2D>().radius + radiusOffset;
+        floatingText.GetComponent<Transform>().position = new Vector3(floatingTextPos.x, floatingTextPos.y + radius, floatingTextPos.z);
+        floatingText.GetComponent<TextMesh>().text = health.ToString();
+        yield return new WaitForSeconds(timeToColor);
     }
 
     IEnumerator SwitchColor()
     {
         sr.color = new Color(1f, 0.4858491f, 0.4858491f);
-        yield return new WaitForSeconds(timeToColor);
+        Coroutine floatingText = StartCoroutine("FloatingText");
+        yield return null;
         sr.color = defaultColor;
-        
     }
 
     private void Die()
@@ -97,4 +118,6 @@ public class Enemy : MonoBehaviour
         Destroy(explosion, durationOfExplosion);
         AudioSource.PlayClipAtPoint(deathSFX, Camera.main.transform.position, deathVolume);
     }
+
+
 }
