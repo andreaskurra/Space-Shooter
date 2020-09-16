@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Kurra Andreas
   productName: Laser Defender
-  defaultCursor: {fileID: 2800000, guid: 9fa6a881ee3e85a46b7df58186888ea5, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.06428451, g: 0.3301887, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1

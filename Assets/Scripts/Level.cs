@@ -20,7 +20,7 @@ public class Level : MonoBehaviour
 
     public void LoadOptions()
     {
-        SceneManager.LoadScene("Options Menu");
+        SceneManager.LoadScene("About Menu");
     }
 
     public void LoadGameOver()
