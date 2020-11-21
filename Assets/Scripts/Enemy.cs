@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
         damageDealer.Hit();
         if (health > 0)
         {
-            StartCoroutine("SwitchColor");
+            StartCoroutine("FloatingText");
         }
         if (health <= 0)
         {
@@ -99,13 +99,13 @@ public class Enemy : MonoBehaviour
         var radius = GetComponent<CircleCollider2D>().radius + radiusOffset;
         floatingText.GetComponent<Transform>().position = new Vector3(floatingTextPos.x, floatingTextPos.y + radius, floatingTextPos.z);
         floatingText.GetComponent<TextMesh>().text = health.ToString();
+        Coroutine switchColor = StartCoroutine("SwitchColor");
         yield return new WaitForSeconds(timeToColor);
     }
 
     IEnumerator SwitchColor()
     {
         sr.color = new Color(1f, 0.4858491f, 0.4858491f);
-        Coroutine floatingText = StartCoroutine("FloatingText");
         yield return null;
         sr.color = defaultColor;
     }
