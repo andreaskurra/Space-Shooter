@@ -39,7 +39,7 @@ public class Meteor : MonoBehaviour
         var addOnPower = addOns[Random.Range(0,addOns.Count)];
         //Debug.Log(addOns.Count);
         GameObject addOn = Instantiate(addOnPower, transform.position, Quaternion.identity);
-        addOn.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -addOnFallSpeed);
+        addOn.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, -addOnFallSpeed);
         Destroy(explosion, durationOfExplosion);
 
     }
